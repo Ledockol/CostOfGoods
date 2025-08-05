@@ -3,6 +3,7 @@
 
 import UIKit
 
+
 class EditCandleViewController: UIViewController {
     
     // Outlets для всех текстовых полей
@@ -18,6 +19,11 @@ class EditCandleViewController: UIViewController {
     @IBOutlet weak var wickPriceField: UITextField!
     @IBOutlet weak var additionalCostsField: UITextField!
     @IBOutlet weak var commentView: UITextView!
+    
+    
+    // Делегат для уведомления о сохранении
+    weak var delegate: CandleUpdatedDelegate?
+    
     
     var candle: Candle!
     
@@ -58,8 +64,9 @@ class EditCandleViewController: UIViewController {
         additionalCostsField.keyboardType = .numberPad
     }
     
+
     
-    @IBOutlet var save: UIBarButtonItem!
+ 
     @IBAction func saveButtonTapped(_ sender: Any) {
     // Сохраняем изменения
         candle.name = nameField.text ?? ""
@@ -75,12 +82,15 @@ class EditCandleViewController: UIViewController {
         candle.additionalCosts = Double(additionalCostsField.text ?? "0") ?? 0
         candle.comment = commentView.text ?? ""
         
+
+        // Уведомляем делегат об обновлении
+        delegate?.candleDidUpdate(candle)
         // Возвращаемся назад
         navigationController?.popViewController(animated: true)
     }
 
 
-    @IBOutlet var cancel: UIBarButtonItem!
+
     @IBAction func cancelButtonTapped(_ sender: Any) {
     navigationController?.popViewController(animated: true)
     }

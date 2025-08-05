@@ -86,7 +86,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="DZX-K4-cUN">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CandleCell" id="DZX-K4-cUN">
                                 <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DZX-K4-cUN" id="BnK-ec-Yf6">
@@ -228,12 +228,10 @@
                         <outlet property="additionalCostsField" destination="Eh3-vb-3Kf" id="2ez-cE-22e"/>
                         <outlet property="aromaPercentageField" destination="CbO-R1-leP" id="lFY-a3-6bh"/>
                         <outlet property="aromaPriceField" destination="DJR-u1-qQJ" id="Ya7-dQ-eAr"/>
-                        <outlet property="cancel" destination="bjJ-VB-2TJ" id="4Y4-mz-GUl"/>
                         <outlet property="commentView" destination="iZk-ht-0b0" id="4Uu-qz-NjE"/>
                         <outlet property="containerPriceField" destination="pD5-0V-R3I" id="ikf-I3-Iv5"/>
                         <outlet property="containerTypeField" destination="YAy-c0-7sC" id="mvS-fM-caA"/>
                         <outlet property="nameField" destination="BXl-Me-HIz" id="ctr-Jf-CKk"/>
-                        <outlet property="save" destination="3oH-Jr-qUI" id="wvU-wO-NNW"/>
                         <outlet property="typeField" destination="CfH-jR-YQj" id="abN-Bn-CEe"/>
                         <outlet property="waxPriceField" destination="HHG-t4-uOU" id="HpE-tA-pY9"/>
                         <outlet property="waxVolumeField" destination="dxX-MV-N2x" id="KDs-Hw-KjC"/>

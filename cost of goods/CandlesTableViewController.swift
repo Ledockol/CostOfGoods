@@ -6,7 +6,12 @@
 //
 import UIKit
 
-class CandlesTableViewController: UITableViewController {
+// Протокол для уведомления об обновлении свечи
+protocol CandleUpdatedDelegate: AnyObject {
+    func candleDidUpdate(_ candle: Candle)
+}
+
+class CandlesTableViewController: UITableViewController, CandleUpdatedDelegate {
     
     // Массив свечей
     var candles: [Candle] = []
@@ -14,7 +19,6 @@ class CandlesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "Свечи"
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "CandleCell")
 
     }
@@ -42,7 +46,7 @@ class CandlesTableViewController: UITableViewController {
         )
         
         // Проверка создания свечи
-        print("Создана новая свеча: \(newCandle.name)")
+        print("Создана новая свеча: \(newCandle.name), ID: \(newCandle.id)")
         
         // Добавляем в массив
         candles.append(newCandle)
@@ -62,12 +66,27 @@ class CandlesTableViewController: UITableViewController {
                 print("Ошибка передачи данных")
                 return
             }
+            print("Передаем свечу: \(candle.name), ID: \(candle.id)")
+            destination.delegate = self
             //Фиксация страницы редактирования
             destination.candle = candle
         }
     }
     
-    
+    // Метод протокола для обновления свечи
+       func candleDidUpdate(_ candle: Candle) {
+           print("Получено обновление свечи: \(candle.name), ID: \(candle.id)")
+           
+           if let index = candles.firstIndex(where: { $0.id == candle.id }) {
+               print("Найден индекс: \(index)")
+               candles[index] = candle
+               DispatchQueue.main.async {
+                   self.tableView.reloadData()
+               }
+           } else {
+               print("Не удалось найти свечу для обновления")
+           }
+       }
     
     
     
@@ -86,5 +105,11 @@ class CandlesTableViewController: UITableViewController {
         cell.textLabel?.text = "\(candle.name) | \(candle.aromaVolume)г | \(candle.waxVolume)г | \(candle.cost)₽"
         return cell
     }
-    
-}
+    // Дополнительно: обработка удаления ячейки
+        override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+            if editingStyle == .delete {
+                candles.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+        }
+    }

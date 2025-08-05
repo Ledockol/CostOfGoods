@@ -5,7 +5,10 @@
 //  Created by Андрей Беседин on 03.08.2025.
 //
 
+import Foundation
+
 struct Candle {
+    var id = UUID()
     var name: String
     var type: String
     var waxVolume: Double // объем воска в граммах
