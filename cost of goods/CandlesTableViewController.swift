@@ -4,66 +4,28 @@
 //
 //  Created by Андрей Беседин on 03.08.2025.
 //
-
 import UIKit
 
 class CandlesTableViewController: UITableViewController {
     
     // Массив свечей
-    var candles: [Candle] = [
-        // Существующие свечи
-        Candle(
-            name: "Свеча 1",
-            type: "Соевая",
-            waxVolume: 200,
-            waxPricePerKg: 800,
-            aromaPercentage: 7,
-            aromaPricePer100g: 200,
-            containerType: "Стеклянная банка",
-            containerPrice: 150,
-            wickType: "Хлопковый",
-            wickPrice: 30,
-            additionalCosts: 50,
-            comment: "Базовая свеча"
-        ),
-        
-        Candle(
-            name: "Свеча 2",
-            type: "Парафиновая",
-            waxVolume: 300,
-            waxPricePerKg: 600,
-            aromaPercentage: 8,
-            aromaPricePer100g: 250,
-            containerType: "Керамическая чаша",
-            containerPrice: 200,
-            wickType: "Деревянный",
-            wickPrice: 40,
-            additionalCosts: 70,
-            comment: "Ароматическая свеча"
-        )
-    ]
+    var candles: [Candle] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.title = "Свечи"
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "CandleCell")
-//        
-//        // Убедимся, что кнопка добавления настроена
-//                if navigationItem.rightBarButtonItem == nil {
-//                    navigationItem.rightBarButtonItem = UIBarButtonItem(
-//                        barButtonSystemItem: .add,
-//                        target: self,
-//                        action: #selector(addCandle)
-//                    )
-//                }
+
     }
     
+    @IBAction func addButtonTapped(_ sender: UIButton) {
+        //Првоерка нажатия кнопки
+        print("Кнопка + нажата")
+        addCandle()
+    }
     // Обработка нажатия кнопки добавления
     @objc func addCandle() {
-        
-        print("Кнопка создания нажата") // Добавьте это для проверки
-        // Создаем новый экземпляр свечи с базовыми параметрами
         let newCandle = Candle(
             name: "Новая свеча",
             type: "",
@@ -79,24 +41,35 @@ class CandlesTableViewController: UITableViewController {
             comment: ""
         )
         
+        // Проверка создания свечи
+        print("Создана новая свеча: \(newCandle.name)")
+        
         // Добавляем в массив
         candles.append(newCandle)
         
         // Обновляем таблицу
         tableView.reloadData()
         
-        // Переходим к редактированию новой свечи
+        //Переход на страницу редактирования созданной свечи
         performSegue(withIdentifier: "editCandleSegue", sender: newCandle)
     }
     
-    // Подготовка к переходу
+    // Переход
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "editCandleSegue" {
             guard let destination = segue.destination as? EditCandleViewController,
-                  let candle = sender as? Candle else { return }
+                  let candle = sender as? Candle else {
+                print("Ошибка передачи данных")
+                return
+            }
+            //Фиксация страницы редактирования
             destination.candle = candle
         }
     }
+    
+    
+    
+    
     
     // Методы таблицы
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -110,7 +83,7 @@ class CandlesTableViewController: UITableViewController {
         )
         
         let candle = candles[indexPath.row]
-        cell.textLabel?.text = "\(candle.name) | \(candle.waxVolume)г | \(candle.cost)₽"
+        cell.textLabel?.text = "\(candle.name) | \(candle.aromaVolume)г | \(candle.waxVolume)г | \(candle.cost)₽"
         return cell
     }
     

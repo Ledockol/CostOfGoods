@@ -103,24 +103,27 @@
                     <navigationItem key="navigationItem" title="Свечи" id="OxT-Gi-rpk">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="CWD-nv-ibP">
                             <connections>
-                                <segue destination="hpj-57-yHQ" kind="show" id="h84-ZE-PBd"/>
+                                <action selector="addButtonTapped:" destination="Gi1-ha-Jki" id="vzP-lF-l5K"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="ijc-h3-2o3" kind="show" identifier="editCandleSegue" id="Kjt-Zw-6WU"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B2y-97-bHT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="744" y="-330"/>
         </scene>
-        <!--Edit Candle View Controller-->
-        <scene sceneID="WhE-o3-9LJ">
+        <!-- Редактирование-->
+        <scene sceneID="XVf-X2-ejl">
             <objects>
-                <viewController id="hpj-57-yHQ" customClass="EditCandleViewController" customModule="cost_of_goods" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="WJ8-lS-aAI">
+                <viewController id="ijc-h3-2o3" customClass="EditCandleViewController" customModule="cost_of_goods" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="emN-NE-vgH">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cml-Wh-0wH">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" id="Cml-Wh-0wH">
                                 <rect key="frame" x="0.0" y="162" width="393" height="690"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -199,46 +202,48 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
+                                <viewLayoutGuide key="safeArea" id="MNC-2a-Gvm"/>
                                 <viewLayoutGuide key="contentLayoutGuide" id="WfK-oh-OBb"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="7vQ-xe-Npd"/>
                             </scrollView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="BIe-qp-yYk"/>
+                        <viewLayoutGuide key="safeArea" id="Qt2-3c-5gQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="kMU-yL-cRa">
-                        <nil key="title"/>
+                    <navigationItem key="navigationItem" title=" Редактирование" id="irc-SE-NF1">
                         <rightBarButtonItems>
-                            <barButtonItem title="Сохранить" style="plain" id="dKj-WJ-ABt">
+                            <barButtonItem systemItem="save" id="3oH-Jr-qUI">
                                 <connections>
-                                    <action selector="saveButtonTapped:" destination="hpj-57-yHQ" id="J5h-xw-Hbb"/>
+                                    <action selector="saveButtonTapped:" destination="ijc-h3-2o3" id="scf-bF-zmu"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Отмена" style="plain" id="QOr-UB-67a">
+                            <barButtonItem systemItem="cancel" id="bjJ-VB-2TJ">
                                 <connections>
-                                    <action selector="cancelButtonTapped:" destination="hpj-57-yHQ" id="trO-NU-Uri"/>
+                                    <action selector="cancelButtonTapped:" destination="ijc-h3-2o3" id="0kf-hN-8nz"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
-                        <outlet property="additionalCostsField" destination="Eh3-vb-3Kf" id="lPv-dE-TRk"/>
-                        <outlet property="aromaPercentageField" destination="CbO-R1-leP" id="hJx-aR-cUt"/>
-                        <outlet property="aromaPriceField" destination="DJR-u1-qQJ" id="CGf-3K-lrE"/>
-                        <outlet property="commentView" destination="iZk-ht-0b0" id="IeY-Vi-Tyn"/>
-                        <outlet property="containerPriceField" destination="pD5-0V-R3I" id="DFb-lX-Mjl"/>
-                        <outlet property="containerTypeField" destination="YAy-c0-7sC" id="qaE-nQ-uUK"/>
-                        <outlet property="nameField" destination="BXl-Me-HIz" id="hXx-ke-n8K"/>
-                        <outlet property="typeField" destination="CfH-jR-YQj" id="WzC-Rh-1qd"/>
-                        <outlet property="waxPriceField" destination="HHG-t4-uOU" id="f0g-hz-5VY"/>
-                        <outlet property="waxVolumeField" destination="dxX-MV-N2x" id="oF8-jc-l6R"/>
-                        <outlet property="wickPriceField" destination="oak-qh-sur" id="msW-TP-gLn"/>
-                        <outlet property="wickTypeField" destination="hGY-zP-V8s" id="3Vc-zq-A0y"/>
+                        <outlet property="additionalCostsField" destination="Eh3-vb-3Kf" id="2ez-cE-22e"/>
+                        <outlet property="aromaPercentageField" destination="CbO-R1-leP" id="lFY-a3-6bh"/>
+                        <outlet property="aromaPriceField" destination="DJR-u1-qQJ" id="Ya7-dQ-eAr"/>
+                        <outlet property="cancel" destination="bjJ-VB-2TJ" id="4Y4-mz-GUl"/>
+                        <outlet property="commentView" destination="iZk-ht-0b0" id="4Uu-qz-NjE"/>
+                        <outlet property="containerPriceField" destination="pD5-0V-R3I" id="ikf-I3-Iv5"/>
+                        <outlet property="containerTypeField" destination="YAy-c0-7sC" id="mvS-fM-caA"/>
+                        <outlet property="nameField" destination="BXl-Me-HIz" id="ctr-Jf-CKk"/>
+                        <outlet property="save" destination="3oH-Jr-qUI" id="wvU-wO-NNW"/>
+                        <outlet property="typeField" destination="CfH-jR-YQj" id="abN-Bn-CEe"/>
+                        <outlet property="waxPriceField" destination="HHG-t4-uOU" id="HpE-tA-pY9"/>
+                        <outlet property="waxVolumeField" destination="dxX-MV-N2x" id="KDs-Hw-KjC"/>
+                        <outlet property="wickPriceField" destination="oak-qh-sur" id="8Kl-eO-7ne"/>
+                        <outlet property="wickTypeField" destination="hGY-zP-V8s" id="oav-4C-UWp"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qJm-gT-h8R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MHy-pV-81h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1525.9541984732823" y="-673.23943661971839"/>
+            <point key="canvasLocation" x="1629.7709923664122" y="-330.28169014084511"/>
         </scene>
     </scenes>
     <resources>
