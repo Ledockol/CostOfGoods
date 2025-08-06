@@ -6,6 +6,8 @@ import UIKit
 
 class EditCandleViewController: UIViewController {
     
+    
+    
     // Outlets для всех текстовых полей
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var typeField: UITextField!
@@ -31,6 +33,12 @@ class EditCandleViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        // Добавляем заголовок в Navigation Bar
+        navigationItem.title = "Новая свеча"
+
+        
         
         //  Проверка существования candle
           guard candle != nil else {
@@ -95,5 +103,3 @@ class EditCandleViewController: UIViewController {
     navigationController?.popViewController(animated: true)
     }
 }
-
-

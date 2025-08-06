@@ -31,7 +31,7 @@ class CandlesTableViewController: UITableViewController, CandleUpdatedDelegate {
     // Обработка нажатия кнопки добавления
     @objc func addCandle() {
         let newCandle = Candle(
-            name: "Новая свеча",
+            name: "",
             type: "",
             waxVolume: 0,
             waxPricePerKg: 0,
@@ -57,21 +57,35 @@ class CandlesTableViewController: UITableViewController, CandleUpdatedDelegate {
         //Переход на страницу редактирования созданной свечи
         performSegue(withIdentifier: "editCandleSegue", sender: newCandle)
     }
-    
-    // Переход
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "editCandleSegue" {
-            guard let destination = segue.destination as? EditCandleViewController,
-                  let candle = sender as? Candle else {
-                print("Ошибка передачи данных")
-                return
-            }
-            print("Передаем свечу: \(candle.name), ID: \(candle.id)")
-            destination.delegate = self
-            //Фиксация страницы редактирования
-            destination.candle = candle
+    // Добавляем обработку нажатия на ячейку
+        override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            // Получаем выбранную свечу
+            let selectedCandle = candles[indexPath.row]
+            // Выполняем переход к детальной информации
+            performSegue(withIdentifier: "showDetailSegue", sender: selectedCandle)
         }
-    }
+        
+    // Переход
+    // Модифицируем prepare(for:sender:)
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.identifier == "showDetailSegue" {
+                guard let destination = segue.destination as? CandleDetailViewController,
+                      let candle = sender as? Candle else {
+                    return
+                }
+                destination.candle = candle
+            } else if segue.identifier == "editCandleSegue" {
+                // Существующая логика для редактирования
+                guard let destination = segue.destination as? EditCandleViewController,
+                      let candle = sender as? Candle else {
+                    print("Ошибка передачи данных")
+                    return
+                }
+                destination.delegate = self
+                destination.candle = candle
+            }
+        }
+        
     
     // Метод протокола для обновления свечи
        func candleDidUpdate(_ candle: Candle) {
@@ -112,4 +126,7 @@ class CandlesTableViewController: UITableViewController, CandleUpdatedDelegate {
                 tableView.deleteRows(at: [indexPath], with: .fade)
             }
         }
+    
+    
+    
     }
