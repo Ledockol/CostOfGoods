@@ -7,17 +7,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A55C1918-92B0-4D99-ACC3-A35D7D50E0A2"
-            shouldBeEnabled = "Yes"
+            uuid = "09F625DA-CD70-4456-978B-D69A70F6657F"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "cost of goods/Candles/EditCandleViewController.swift"
+            filePath = "cost of goods/CandleDetailViewController.swift.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "6"
-            endingLineNumber = "6"
-            landmarkName = "EditCandleViewController"
-            landmarkType = "3">
+            startingLineNumber = "7"
+            endingLineNumber = "7"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

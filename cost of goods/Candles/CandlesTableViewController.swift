@@ -73,6 +73,7 @@ class CandlesTableViewController: UITableViewController, CandleUpdatedDelegate {
                       let candle = sender as? Candle else {
                     return
                 }
+                destination.delegate = self
                 destination.candle = candle
             } else if segue.identifier == "editCandleSegue" {
                 // Существующая логика для редактирования

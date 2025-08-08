@@ -92,7 +92,9 @@ class EditCandleViewController: UIViewController {
         
 
         // Уведомляем делегат об обновлении
-        delegate?.candleDidUpdate(candle)
+        if let delegate = delegate {
+            delegate.candleDidUpdate(candle)
+        }
         // Возвращаемся назад
         navigationController?.popViewController(animated: true)
     }

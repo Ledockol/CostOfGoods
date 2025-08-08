@@ -271,7 +271,13 @@
                             <constraint firstItem="ed3-I9-2wU" firstAttribute="leading" secondItem="L3G-Yc-Asf" secondAttribute="leading" constant="16" id="z8y-R4-CXJ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="KYf-sc-fnQ"/>
+                    <navigationItem key="navigationItem" id="KYf-sc-fnQ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="lYI-0j-uAd">
+                            <connections>
+                                <action selector="editButtonTapped:" destination="vhx-Mj-6O0" id="gBS-Uf-HYz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="additionalCostsLabel" destination="LJ2-7c-Af8" id="YAb-rn-LhR"/>
                         <outlet property="aromaPercentageLabel" destination="fQ4-Kk-IZ1" id="z75-2n-w2U"/>
@@ -287,11 +293,12 @@
                         <outlet property="waxVolumeLabel" destination="lUo-jt-gOA" id="P5d-eT-2ct"/>
                         <outlet property="wickPriceLabel" destination="k3h-FS-RRu" id="4cP-jg-ub2"/>
                         <outlet property="wickTypeLabel" destination="rsu-hP-ByD" id="aL1-QJ-Mhc"/>
+                        <segue destination="ijc-h3-2o3" kind="push" identifier="editCandleSegueCard" id="uPk-0j-JQI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s0O-Lv-7p1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1629.7709923664122" y="-1050"/>
+            <point key="canvasLocation" x="1505" y="-1068"/>
         </scene>
         <!--Edit Candle View Controller-->
         <scene sceneID="XVf-X2-ejl">
@@ -614,6 +621,9 @@
             <point key="canvasLocation" x="1867.9389312977098" y="-330.28169014084511"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="uPk-0j-JQI"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
