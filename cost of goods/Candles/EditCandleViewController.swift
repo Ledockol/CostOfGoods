@@ -6,7 +6,8 @@ import UIKit
 
 class EditCandleViewController: UIViewController {
     
-    
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var contentView: UIView!
     
     // Outlets для всех текстовых полей
     @IBOutlet weak var nameField: UITextField!
@@ -33,7 +34,14 @@ class EditCandleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        // Устанавливаем contentSize для ScrollView
+                contentView.translatesAutoresizingMaskIntoConstraints = false
+                scrollView.contentSize = contentView.bounds.size
+                
+                // Добавляем отступы для прокрутки
+                scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+                scrollView.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        
         // Проверяем, новая ли свеча
         isNewCandle = candle.name == "" && candle.type == ""
 
@@ -75,6 +83,13 @@ class EditCandleViewController: UIViewController {
         wickPriceField.keyboardType = .numberPad
         additionalCostsField.keyboardType = .numberPad
     }
+    
+    override func viewDidLayoutSubviews() {
+            super.viewDidLayoutSubviews()
+            
+            // Обновляем contentSize при изменении layout
+            scrollView.contentSize = contentView.bounds.size
+        }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
     // Сохраняем изменения
