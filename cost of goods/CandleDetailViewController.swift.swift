@@ -8,6 +8,10 @@
 import UIKit
 
 class CandleDetailViewController: UIViewController, CandleUpdatedDelegate {
+    func candleWasCancelled(_ candle: Candle) {
+    
+    }
+    
     
     // Outlets для отображения информации
     @IBOutlet weak var nameLabel: UILabel!
@@ -25,23 +29,15 @@ class CandleDetailViewController: UIViewController, CandleUpdatedDelegate {
     @IBOutlet weak var cost: UILabel!
     @IBOutlet weak var commentTextView: UITextView!
     
-    
-    
-    // Слабая ссылка на делегат
     weak var delegate: CandleUpdatedDelegate?
-    
-    // Модель данных
+
     var candle: Candle!
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+          
         // Инициализация UI
         updateCandleDetails()
-        
         
         // Настройка заголовка
         navigationItem.title = "Карточка свечи"
@@ -52,10 +48,7 @@ class CandleDetailViewController: UIViewController, CandleUpdatedDelegate {
             navigationController?.popViewController(animated: true)
             return
         }
-        
-        
     }
-    
     
     // Обновление данных на экране
     func updateCandleDetails() {
@@ -91,11 +84,11 @@ class CandleDetailViewController: UIViewController, CandleUpdatedDelegate {
             destination.candle = candle
         }
     }
+    
     func candleDidUpdate(_ candle: Candle) {
         // Обновляем данные в карточке
         self.candle = candle
         updateCandleDetails()
-        
         // Уведомляем родительский контроллер об обновлении
         delegate?.candleDidUpdate(candle)
     }

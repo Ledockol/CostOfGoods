@@ -22,24 +22,29 @@ class EditCandleViewController: UIViewController {
     @IBOutlet weak var additionalCostsField: UITextField!
     @IBOutlet weak var commentView: UITextView!
     
+    // Флаг для определения создания новой свечи
+        var isNewCandle: Bool = false
     
     // Делегат для уведомления о сохранении
     weak var delegate: CandleUpdatedDelegate?
     
-    
     var candle: Candle!
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        // Добавляем заголовок в Navigation Bar
-        navigationItem.title = "Новая свеча"
 
-        
-        
+        // Проверяем, новая ли свеча
+        isNewCandle = candle.name == "" && candle.type == ""
+
+               
+               // Если новая свеча, меняем заголовок
+               if isNewCandle {
+                   navigationItem.title = "Новая свеча"
+               } else {
+                   navigationItem.title = "Редактирование свечи"
+               }
+
         //  Проверка существования candle
           guard candle != nil else {
               print("Свеча не передана")
@@ -47,7 +52,6 @@ class EditCandleViewController: UIViewController {
             return
           }
 
-        
         // Заполняем поля данными свечи
         nameField.text = candle.name
         typeField.text = candle.type
@@ -72,9 +76,6 @@ class EditCandleViewController: UIViewController {
         additionalCostsField.keyboardType = .numberPad
     }
     
-
-    
- 
     @IBAction func saveButtonTapped(_ sender: Any) {
     // Сохраняем изменения
         candle.name = nameField.text ?? ""
@@ -90,7 +91,6 @@ class EditCandleViewController: UIViewController {
         candle.additionalCosts = Double(additionalCostsField.text ?? "0") ?? 0
         candle.comment = commentView.text ?? ""
         
-
         // Уведомляем делегат об обновлении
         if let delegate = delegate {
             delegate.candleDidUpdate(candle)
@@ -99,9 +99,11 @@ class EditCandleViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
 
-
-
     @IBAction func cancelButtonTapped(_ sender: Any) {
+        if isNewCandle {
+                    // Если это новая свеча, просто удаляем её из массива
+                    delegate?.candleWasCancelled(candle)
+                }
     navigationController?.popViewController(animated: true)
     }
 }

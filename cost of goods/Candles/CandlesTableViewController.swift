@@ -9,6 +9,7 @@ import UIKit
 // Протокол для уведомления об обновлении свечи
 protocol CandleUpdatedDelegate: AnyObject {
     func candleDidUpdate(_ candle: Candle)
+    func candleWasCancelled(_ candle: Candle)
 }
 
 class CandlesTableViewController: UITableViewController, CandleUpdatedDelegate {
@@ -16,11 +17,17 @@ class CandlesTableViewController: UITableViewController, CandleUpdatedDelegate {
     // Массив свечей
     var candles: [Candle] = []
     
+    func candleWasCancelled(_ candle: Candle) {
+        if let index = candles.firstIndex(where: { $0.id == candle.id }) {
+            candles.remove(at: index)
+            tableView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "CandleCell")
-
     }
     
     @IBAction func addButtonTapped(_ sender: UIButton) {
@@ -89,22 +96,16 @@ class CandlesTableViewController: UITableViewController, CandleUpdatedDelegate {
         
     
     // Метод протокола для обновления свечи
-       func candleDidUpdate(_ candle: Candle) {
-           print("Получено обновление свечи: \(candle.name), ID: \(candle.id)")
-           
-           if let index = candles.firstIndex(where: { $0.id == candle.id }) {
-               print("Найден индекс: \(index)")
-               candles[index] = candle
-               DispatchQueue.main.async {
-                   self.tableView.reloadData()
-               }
-           } else {
-               print("Не удалось найти свечу для обновления")
-           }
-       }
-    
-    
-    
+    func candleDidUpdate(_ candle: Candle) {
+        if let index = candles.firstIndex(where: { $0.id == candle.id }) {
+            candles[index] = candle
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+        
+    }
+
     // Методы таблицы
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return candles.count
