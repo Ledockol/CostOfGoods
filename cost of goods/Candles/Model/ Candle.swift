@@ -4,10 +4,9 @@
 //
 //  Created by Андрей Беседин on 03.08.2025.
 //
-
 import Foundation
 
-struct Candle {
+struct Candle: Encodable, Decodable {  // Добавляем соответствие протоколам
     var id: UUID
     var name: String
     var type: String
@@ -37,34 +36,32 @@ struct Candle {
     var comment: String
     
     init(
-            id: UUID = UUID(),
-            name: String,
-            type: String,
-            waxVolume: Double,
-            waxPricePerKg: Double,
-            aromaPercentage: Double,
-            aromaPricePer100g: Double,
-            containerType: String,
-            containerPrice: Double,
-            wickType: String,
-            wickPrice: Double,
-            additionalCosts: Double,
-            comment: String
-
-        ) {
-            self.id = id
-            self.name = name
-            self.type = type
-            self.waxVolume = waxVolume
-            self.waxPricePerKg = waxPricePerKg
-            self.aromaPercentage = aromaPercentage
-            self.aromaPricePer100g = aromaPricePer100g
-            self.containerType = containerType
-            self.containerPrice = containerPrice
-            self.wickType = wickType
-            self.wickPrice = wickPrice
-            self.additionalCosts = additionalCosts
-            self.comment = comment
-            
-        }
+        id: UUID = UUID(),
+        name: String,
+        type: String,
+        waxVolume: Double,
+        waxPricePerKg: Double,
+        aromaPercentage: Double,
+        aromaPricePer100g: Double,
+        containerType: String,
+        containerPrice: Double,
+        wickType: String,
+        wickPrice: Double,
+        additionalCosts: Double,
+        comment: String
+    ) {
+        self.id = id
+        self.name = name
+        self.type = type
+        self.waxVolume = waxVolume
+        self.waxPricePerKg = waxPricePerKg
+        self.aromaPercentage = aromaPercentage
+        self.aromaPricePer100g = aromaPricePer100g
+        self.containerType = containerType
+        self.containerPrice = containerPrice
+        self.wickType = wickType
+        self.wickPrice = wickPrice
+        self.additionalCosts = additionalCosts
+        self.comment = comment
+    }
 }

@@ -35,7 +35,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AJs-dy-2v0">
                                 <rect key="frame" x="121.66666666666669" y="187" width="150" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="Mof-tP-Leo"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="Mof-tP-Leo"/>
                                     <constraint firstAttribute="height" constant="50" id="OhJ-71-fOM"/>
                                 </constraints>
                                 <color key="tintColor" systemColor="systemTealColor"/>
@@ -58,6 +58,9 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Фигуры">
                                     <color key="baseBackgroundColor" systemColor="systemTealColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="dr6-LU-6GY" kind="show" id="aIm-5A-of6"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KwF-Lw-epS"/>
@@ -299,6 +302,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s0O-Lv-7p1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1505" y="-1068"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="HEg-Al-6ea">
+            <objects>
+                <viewController id="dr6-LU-6GY" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KSS-7F-wqO">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="eIY-7e-4m1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="da8-nh-wQE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gpT-ko-y9Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="743" y="347"/>
         </scene>
         <!--Edit Candle View Controller-->
         <scene sceneID="XVf-X2-ejl">
@@ -603,6 +622,7 @@
                                 <constraints>
                                     <constraint firstItem="VTg-HN-jva" firstAttribute="leading" secondItem="x1Y-5R-ljK" secondAttribute="leading" id="BOb-J6-q9e"/>
                                     <constraint firstAttribute="trailing" secondItem="VTg-HN-jva" secondAttribute="trailing" id="OTA-Bv-8nz"/>
+                                    <constraint firstItem="VTg-HN-jva" firstAttribute="trailing" secondItem="P4s-pX-8xz" secondAttribute="trailing" id="Rdb-Zk-XSD"/>
                                     <constraint firstItem="VTg-HN-jva" firstAttribute="top" secondItem="P4s-pX-8xz" secondAttribute="top" id="bKw-Gm-pYP"/>
                                     <constraint firstAttribute="bottom" secondItem="VTg-HN-jva" secondAttribute="bottom" constant="-310" id="foI-kN-ubl"/>
                                 </constraints>
@@ -656,7 +676,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="uPk-0j-JQI"/>
+        <segue reference="Kjt-Zw-6WU"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">
