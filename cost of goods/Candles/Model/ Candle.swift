@@ -6,21 +6,21 @@
 //
 import Foundation
 
-struct Candle: Encodable, Decodable {  // Добавляем соответствие протоколам
+struct Candle: Encodable, Decodable {
     var id: UUID
     var name: String
     var type: String
-    var waxVolume: Double // объем воска в граммах
-    var waxPricePerKg: Double // цена воска за 1 кг
-    var aromaPercentage: Double // процент ароматизатора
-    var aromaPricePer100g: Double // цена ароматизатора за 100г
+    var waxVolume: Double
+    var waxPricePerKg: Double
+    var aromaPercentage: Double
+    var aromaPricePer100g: Double
     var containerType: String
     var containerPrice: Double
     var wickType: String
     var wickPrice: Double
     var additionalCosts: Double
     
-    // вычисляемые свойства
+  
     var aromaVolume: Double {
         return waxVolume * (aromaPercentage / 100)
     }

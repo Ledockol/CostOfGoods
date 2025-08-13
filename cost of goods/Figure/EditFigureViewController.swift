@@ -22,7 +22,7 @@ class EditFigureViewController: UIViewController {
     @IBOutlet weak var additionalCostsField: UITextField!
     @IBOutlet weak var commentView: UITextView!
     
-    // Флаг для определения создания новой свечи
+    // Флаг для определения создания новой фигуры
         var isNewFigure: Bool = false
     
     // Делегат для уведомления о сохранении
@@ -41,11 +41,11 @@ class EditFigureViewController: UIViewController {
                 scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
                 scrollView.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         
-        // Проверяем, новая ли свеча
+        // Проверяем, новая ли фигура
         isNewFigure = figure.name == "" && figure.material == ""
 
                
-               // Если новая свеча, меняем заголовок
+               // Если новая фигура, меняем заголовок
                if isNewFigure {
                    navigationItem.title = "Новая фигура"
                } else {
@@ -59,7 +59,7 @@ class EditFigureViewController: UIViewController {
             return
           }
 
-        // Заполняем поля данными свечи
+        // Заполняем поля данными фигуры
         nameField.text = figure.name
         materialField.text = figure.material
         weightField.text = "\(figure.weight)"
@@ -99,7 +99,7 @@ class EditFigureViewController: UIViewController {
 
     @IBAction func cancelButtonTapped(_ sender: Any) {
         if isNewFigure {
-                    // Если это новая свеча, просто удаляем её из массива
+                    // Если это новая фигура - удаляем
                     delegate?.figureWasCancelled(figure)
                 }
     navigationController?.popViewController(animated: true)

@@ -8,7 +8,7 @@
 import UIKit
 import Foundation
 
-// Протокол для уведомления об обновлении свечи
+// Протокол для уведомления об обновлении фигуры
 protocol FigureUpdatedDelegate: AnyObject {
     func figureDidUpdate(_ figure: Figure)
     func figureWasCancelled(_ figure: Figure)
@@ -16,7 +16,7 @@ protocol FigureUpdatedDelegate: AnyObject {
 
 class FiguresTableViewController: UITableViewController, FigureUpdatedDelegate {
     
-    // Массив свечей
+    // Массив фигур
     var figures: [Figure] = []
     
     // Константа для ключа хранения
@@ -46,7 +46,7 @@ class FiguresTableViewController: UITableViewController, FigureUpdatedDelegate {
         // Обновляем таблицу
         tableView.reloadData()
         
-        // Переход на страницу редактирования созданной свечи
+        // Переход на страницу редактирования созданной фигуры
         performSegue(withIdentifier: "editFigureSegue", sender: newFigure)
     }
     
@@ -107,7 +107,7 @@ class FiguresTableViewController: UITableViewController, FigureUpdatedDelegate {
         }
     }
     
-    // Метод протокола для обновления свечи
+    // Метод протокола для обновления фигуры
     func figureDidUpdate(_ figure: Figure) {
         if let index = figures.firstIndex(where: { $0.id == figure.id }) {
             figures[index] = figure

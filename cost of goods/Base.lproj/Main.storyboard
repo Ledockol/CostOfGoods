@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -32,44 +33,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AJs-dy-2v0">
-                                <rect key="frame" x="121.66666666666669" y="187" width="150" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="Mof-tP-Leo"/>
-                                    <constraint firstAttribute="height" constant="50" id="OhJ-71-fOM"/>
-                                </constraints>
-                                <color key="tintColor" systemColor="systemTealColor"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title=" Свечи">
-                                    <color key="baseBackgroundColor" systemColor="systemTealColor"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <segue destination="Gi1-ha-Jki" kind="show" id="tVk-Zv-fld"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BXK-k2-RZj">
                                 <rect key="frame" x="121.66666666666669" y="287" width="150" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="JDu-pS-LQy"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="nRb-x2-e92"/>
                                 </constraints>
-                                <color key="tintColor" systemColor="systemTealColor"/>
+                                <color key="tintColor" name="AccentColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Фигуры">
-                                    <color key="baseBackgroundColor" systemColor="systemTealColor"/>
+                                    <color key="baseBackgroundColor" name="AccentColor"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <segue destination="Ws5-h7-KjF" kind="show" id="6yW-uK-1Dt"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bio-Fy-GgJ">
+                                <rect key="frame" x="121.66666666666669" y="387" width="150" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Dc8-uN-dEF"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="fW5-0B-cfc"/>
+                                </constraints>
+                                <color key="tintColor" name="AccentColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Калькулятор">
+                                    <color key="baseBackgroundColor" name="AccentColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="del-cD-0g4" kind="show" id="9Qm-on-txn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AJs-dy-2v0">
+                                <rect key="frame" x="121.66666666666669" y="187" width="150" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="Mof-tP-Leo"/>
+                                    <constraint firstAttribute="height" constant="50" id="OhJ-71-fOM"/>
+                                </constraints>
+                                <color key="tintColor" name="AccentColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title=" Свечи">
+                                    <color key="baseBackgroundColor" systemColor="tintColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="Gi1-ha-Jki" kind="show" id="tVk-Zv-fld"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KwF-Lw-epS"/>
-                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="BXK-k2-RZj" firstAttribute="top" secondItem="AJs-dy-2v0" secondAttribute="bottom" constant="50" id="BbJ-5B-WXK"/>
+                            <constraint firstItem="Bio-Fy-GgJ" firstAttribute="top" secondItem="BXK-k2-RZj" secondAttribute="bottom" constant="50" id="Eps-v1-hmk"/>
                             <constraint firstItem="AJs-dy-2v0" firstAttribute="centerX" secondItem="kog-My-Ffs" secondAttribute="centerX" id="Pfj-jQ-7Ae"/>
                             <constraint firstItem="AJs-dy-2v0" firstAttribute="top" secondItem="KwF-Lw-epS" secondAttribute="top" constant="25" id="QF3-n4-xfx"/>
+                            <constraint firstItem="Bio-Fy-GgJ" firstAttribute="centerX" secondItem="kog-My-Ffs" secondAttribute="centerX" id="WWe-tl-cWq"/>
                             <constraint firstItem="BXK-k2-RZj" firstAttribute="centerX" secondItem="kog-My-Ffs" secondAttribute="centerX" id="lQh-eS-Ogk"/>
                             <constraint firstItem="BXK-k2-RZj" firstAttribute="top" secondItem="AJs-dy-2v0" secondAttribute="bottom" constant="50" id="sgN-gq-jwa"/>
                         </constraints>
@@ -87,7 +104,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="aKO-1e-4wy">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CandleCell" id="DZX-K4-cUN">
                                 <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
@@ -207,14 +224,14 @@
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DHr-S0-Spm">
                                 <rect key="frame" x="16" y="563" width="361" height="189"/>
-                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="tintColor" red="0.040101572871208191" green="0.13829508423805237" blue="0.97062808275222778" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="L3G-Yc-Asf"/>
-                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="k3h-FS-RRu" firstAttribute="top" secondItem="rsu-hP-ByD" secondAttribute="bottom" constant="10" id="1uu-dk-KnA"/>
                             <constraint firstItem="fQ4-Kk-IZ1" firstAttribute="top" secondItem="big-Qj-u3s" secondAttribute="bottom" constant="10" id="2lQ-br-nV8"/>
@@ -615,7 +632,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Qt2-3c-5gQ"/>
-                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="x1Y-5R-ljK" firstAttribute="trailing" secondItem="Qt2-3c-5gQ" secondAttribute="trailing" id="G9x-yc-Sz7"/>
                             <constraint firstAttribute="bottom" secondItem="x1Y-5R-ljK" secondAttribute="bottom" id="OhB-hX-oxm"/>
@@ -665,7 +682,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="lcK-bo-u56">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CandleCell" id="Z3P-Bb-rr4">
                                 <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
@@ -743,14 +760,14 @@
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZAe-mj-0WI">
                                 <rect key="frame" x="16" y="438" width="361" height="216"/>
-                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <color key="backgroundColor" systemColor="tableBackgroundColor"/>
                                 <color key="tintColor" red="0.040101572869999998" green="0.1382950842" blue="0.97062808280000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Cch-SE-iAw"/>
-                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="epw-ka-9BY" firstAttribute="top" secondItem="Cch-SE-iAw" secondAttribute="top" constant="30" id="0Ia-JP-BM7"/>
                             <constraint firstItem="epw-ka-9BY" firstAttribute="leading" secondItem="nxp-MJ-RXf" secondAttribute="leading" constant="16" id="1LF-fK-00g"/>
@@ -974,7 +991,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="05G-vh-VAZ"/>
-                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="5We-q1-p0M" firstAttribute="top" secondItem="05G-vh-VAZ" secondAttribute="top" id="7yz-wO-yEZ"/>
                             <constraint firstItem="5We-q1-p0M" firstAttribute="leading" secondItem="05G-vh-VAZ" secondAttribute="leading" id="bro-58-nhO"/>
@@ -1011,23 +1028,303 @@
             </objects>
             <point key="canvasLocation" x="1964" y="487"/>
         </scene>
+        <!--Calculator View Controller-->
+        <scene sceneID="BKo-lP-6GX">
+            <objects>
+                <viewController id="del-cD-0g4" customClass="CalculatorViewController" customModule="cost_of_goods" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IOq-GZ-kmX">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xlS-rY-vIS">
+                                <rect key="frame" x="50" y="212" width="293" height="34.333333333333343"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Расчитать количество ароматизатора для воска"/>
+                                <connections>
+                                    <segue destination="PIs-Wb-d51" kind="show" id="eVV-VD-fTa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LxR-7Q-Rch">
+                                <rect key="frame" x="50" y="296.33333333333331" width="293" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Расчитать количество воска для отдушки"/>
+                                <connections>
+                                    <segue destination="O6A-3T-fFO" kind="show" id="7Mm-4k-sTK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MOW-9z-9zb">
+                                <rect key="frame" x="50" y="381.33333333333331" width="293" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Расчитать количество полученных свечей"/>
+                                <connections>
+                                    <segue destination="zEx-dZ-ANA" kind="show" id="3Dn-BL-JM6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Rcb-Dt-dFO"/>
+                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="LxR-7Q-Rch" firstAttribute="top" secondItem="xlS-rY-vIS" secondAttribute="bottom" constant="50" id="0Y6-OI-5tk"/>
+                            <constraint firstItem="xlS-rY-vIS" firstAttribute="leading" secondItem="Rcb-Dt-dFO" secondAttribute="leading" constant="50" id="3Wd-Wp-UMb"/>
+                            <constraint firstItem="xlS-rY-vIS" firstAttribute="top" secondItem="Rcb-Dt-dFO" secondAttribute="top" constant="50" id="MRR-DY-vgE"/>
+                            <constraint firstItem="MOW-9z-9zb" firstAttribute="leading" secondItem="Rcb-Dt-dFO" secondAttribute="leading" constant="50" id="MwB-iN-EBh"/>
+                            <constraint firstAttribute="trailing" secondItem="xlS-rY-vIS" secondAttribute="trailing" constant="50" id="OXn-4Q-guf"/>
+                            <constraint firstAttribute="trailing" secondItem="LxR-7Q-Rch" secondAttribute="trailing" constant="50" id="XG9-rW-YG2"/>
+                            <constraint firstItem="MOW-9z-9zb" firstAttribute="top" secondItem="LxR-7Q-Rch" secondAttribute="bottom" constant="50" id="g4t-PQ-FTz"/>
+                            <constraint firstItem="MOW-9z-9zb" firstAttribute="top" secondItem="LxR-7Q-Rch" secondAttribute="bottom" constant="50" id="lRx-1G-QCY"/>
+                            <constraint firstAttribute="trailing" secondItem="MOW-9z-9zb" secondAttribute="trailing" constant="50" id="muP-3J-1UF"/>
+                            <constraint firstItem="LxR-7Q-Rch" firstAttribute="top" secondItem="xlS-rY-vIS" secondAttribute="bottom" constant="50" id="qr6-FN-KKz"/>
+                            <constraint firstItem="LxR-7Q-Rch" firstAttribute="leading" secondItem="Rcb-Dt-dFO" secondAttribute="leading" constant="50" id="qrl-lG-ew1"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="RG9-EM-S4i"/>
+                    <connections>
+                        <outlet property="candlesCountButton" destination="MOW-9z-9zb" id="b4L-m0-6QD"/>
+                        <outlet property="fragranceForWaxButton" destination="xlS-rY-vIS" id="r7i-l6-797"/>
+                        <outlet property="waxForFragranceButton" destination="LxR-7Q-Rch" id="FlG-P1-NdW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Iko-pl-U4V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2849.6183206106871" y="119.71830985915494"/>
+        </scene>
+        <!--Fragrance Calculator View Controller-->
+        <scene sceneID="aTf-sf-zHG">
+            <objects>
+                <viewController id="PIs-Wb-d51" customClass="FragranceCalculatorViewController" customModule="cost_of_goods" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="w5c-J3-Os1">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Количество воска в граммах" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uJc-o2-CPE">
+                                <rect key="frame" x="15" y="212" width="363" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="% Ароматизатора" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZuK-jR-ldc">
+                                <rect key="frame" x="15" y="266" width="363" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tM7-Mx-FcM">
+                                <rect key="frame" x="139" y="480" width="115" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Рассчитать"/>
+                                <connections>
+                                    <action selector="calculateButtonTapped:" destination="PIs-Wb-d51" eventType="touchUpInside" id="QdS-47-AtJ"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="P8H-Mg-4CM">
+                                <rect key="frame" x="15" y="350" width="363" height="80"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="AHD-Kg-mvV"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8rS-hF-84C"/>
+                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ZuK-jR-ldc" firstAttribute="top" secondItem="uJc-o2-CPE" secondAttribute="bottom" constant="20" id="44Q-nH-NwW"/>
+                            <constraint firstItem="8rS-hF-84C" firstAttribute="trailing" secondItem="uJc-o2-CPE" secondAttribute="trailing" constant="15" id="G7w-ZS-MrJ"/>
+                            <constraint firstItem="uJc-o2-CPE" firstAttribute="leading" secondItem="8rS-hF-84C" secondAttribute="leading" constant="15" id="GXY-aN-x7Y"/>
+                            <constraint firstItem="uJc-o2-CPE" firstAttribute="top" secondItem="8rS-hF-84C" secondAttribute="top" constant="50" id="K79-Gd-gpJ"/>
+                            <constraint firstItem="tM7-Mx-FcM" firstAttribute="centerX" secondItem="w5c-J3-Os1" secondAttribute="centerX" id="KXQ-Nc-D2a"/>
+                            <constraint firstItem="P8H-Mg-4CM" firstAttribute="top" secondItem="ZuK-jR-ldc" secondAttribute="bottom" constant="50" id="Pho-HX-dCM"/>
+                            <constraint firstItem="ZuK-jR-ldc" firstAttribute="leading" secondItem="8rS-hF-84C" secondAttribute="leading" constant="15" id="YFW-As-jjh"/>
+                            <constraint firstItem="P8H-Mg-4CM" firstAttribute="leading" secondItem="8rS-hF-84C" secondAttribute="leading" constant="15" id="aTg-Ah-FKi"/>
+                            <constraint firstItem="tM7-Mx-FcM" firstAttribute="top" secondItem="P8H-Mg-4CM" secondAttribute="bottom" constant="50" id="blM-yQ-SWr"/>
+                            <constraint firstItem="8rS-hF-84C" firstAttribute="trailing" secondItem="ZuK-jR-ldc" secondAttribute="trailing" constant="15" id="k5B-1W-kFN"/>
+                            <constraint firstItem="8rS-hF-84C" firstAttribute="trailing" secondItem="P8H-Mg-4CM" secondAttribute="trailing" constant="15" id="qa4-KN-xN0"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="gDS-Ci-c7l"/>
+                    <connections>
+                        <outlet property="fragrancePercentTextField" destination="ZuK-jR-ldc" id="9Bq-ng-xrY"/>
+                        <outlet property="resultLabel" destination="P8H-Mg-4CM" id="6mN-za-1RX"/>
+                        <outlet property="waxTextField" destination="uJc-o2-CPE" id="8Mk-Gh-tj0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SeZ-JU-ovd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3780.9160305343512" y="-530.28169014084506"/>
+        </scene>
+        <!--Wax Calculator View Controller-->
+        <scene sceneID="rvg-PB-IPg">
+            <objects>
+                <viewController id="O6A-3T-fFO" customClass="WaxCalculatorViewController" customModule="cost_of_goods" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sNw-aF-yp3">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Количество ароматизатора в граммах" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="86Q-XJ-7FG">
+                                <rect key="frame" x="15" y="212" width="363" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Желаемый % ароматизатора" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bxe-M2-kXe">
+                                <rect key="frame" x="15" y="266" width="363" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ifw-1N-4qh">
+                                <rect key="frame" x="15" y="350" width="363" height="80"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="d8u-Nh-Xdo"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RZn-oj-AdG">
+                                <rect key="frame" x="139" y="480" width="115" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Рассчитать"/>
+                                <connections>
+                                    <action selector="calculateButtonTapped:" destination="O6A-3T-fFO" eventType="touchUpInside" id="h3e-mK-6hq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="jCY-vk-KR6"/>
+                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jCY-vk-KR6" firstAttribute="trailing" secondItem="bxe-M2-kXe" secondAttribute="trailing" constant="15" id="2NN-RT-nGe"/>
+                            <constraint firstItem="bxe-M2-kXe" firstAttribute="leading" secondItem="jCY-vk-KR6" secondAttribute="leading" constant="15" id="CBu-wp-sxZ"/>
+                            <constraint firstItem="86Q-XJ-7FG" firstAttribute="top" secondItem="jCY-vk-KR6" secondAttribute="top" constant="50" id="MFX-8H-h3v"/>
+                            <constraint firstItem="RZn-oj-AdG" firstAttribute="centerX" secondItem="sNw-aF-yp3" secondAttribute="centerX" id="MgY-xH-pRg"/>
+                            <constraint firstItem="RZn-oj-AdG" firstAttribute="top" secondItem="ifw-1N-4qh" secondAttribute="bottom" constant="50" id="Qod-PC-JIg"/>
+                            <constraint firstItem="bxe-M2-kXe" firstAttribute="top" secondItem="86Q-XJ-7FG" secondAttribute="bottom" constant="20" id="WAo-HL-9AW"/>
+                            <constraint firstItem="ifw-1N-4qh" firstAttribute="leading" secondItem="jCY-vk-KR6" secondAttribute="leading" constant="15" id="YUe-jc-QB9"/>
+                            <constraint firstItem="86Q-XJ-7FG" firstAttribute="leading" secondItem="jCY-vk-KR6" secondAttribute="leading" constant="15" id="fv4-wM-xmJ"/>
+                            <constraint firstItem="ifw-1N-4qh" firstAttribute="top" secondItem="bxe-M2-kXe" secondAttribute="bottom" constant="50" id="gVR-pw-5z5"/>
+                            <constraint firstItem="jCY-vk-KR6" firstAttribute="trailing" secondItem="86Q-XJ-7FG" secondAttribute="trailing" constant="15" id="wo5-wg-FjX"/>
+                            <constraint firstItem="jCY-vk-KR6" firstAttribute="trailing" secondItem="ifw-1N-4qh" secondAttribute="trailing" constant="15" id="yk6-bX-Ted"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="OGi-Ms-zag"/>
+                    <connections>
+                        <outlet property="fragrancePercentTextField" destination="bxe-M2-kXe" id="ZBm-K6-QOV"/>
+                        <outlet property="fragranceTextField" destination="86Q-XJ-7FG" id="5p2-rd-97x"/>
+                        <outlet property="resultLabel" destination="ifw-1N-4qh" id="RBY-SM-e84"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="utE-rO-bgt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3780.9160305343512" y="136.61971830985917"/>
+        </scene>
+        <!--Candles Calculator View Controller-->
+        <scene sceneID="fve-Fm-ahN">
+            <objects>
+                <viewController id="zEx-dZ-ANA" customClass="CandlesCalculatorViewController" customModule="cost_of_goods" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nZE-sq-H8J">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Количество воска в граммах" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o69-5x-ZoJ">
+                                <rect key="frame" x="15" y="212" width="363" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Количество ароматизатора в граммах" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iy6-4x-Gz3">
+                                <rect key="frame" x="15" y="266" width="363" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="% Ароматизатора" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NM5-OH-7mj">
+                                <rect key="frame" x="15" y="320" width="363" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Объем одной свечи" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cVN-v9-sSc">
+                                <rect key="frame" x="15" y="374" width="363" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="39o-4Z-8UK">
+                                <rect key="frame" x="15" y="458" width="363" height="80"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="zgk-jR-73l"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qNJ-an-CgO">
+                                <rect key="frame" x="139" y="588" width="115" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Рассчитать"/>
+                                <connections>
+                                    <action selector="calculateButtonTapped:" destination="zEx-dZ-ANA" eventType="touchUpInside" id="ez5-aQ-NMP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="r22-50-epc"/>
+                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="o69-5x-ZoJ" firstAttribute="leading" secondItem="r22-50-epc" secondAttribute="leading" constant="15" id="52M-US-I1M"/>
+                            <constraint firstItem="NM5-OH-7mj" firstAttribute="top" secondItem="iy6-4x-Gz3" secondAttribute="bottom" constant="20" id="55p-Zg-OYn"/>
+                            <constraint firstItem="qNJ-an-CgO" firstAttribute="top" secondItem="39o-4Z-8UK" secondAttribute="bottom" constant="50" id="7H0-kd-qP9"/>
+                            <constraint firstItem="39o-4Z-8UK" firstAttribute="top" secondItem="cVN-v9-sSc" secondAttribute="bottom" constant="50" id="9KE-dp-GjG"/>
+                            <constraint firstItem="r22-50-epc" firstAttribute="trailing" secondItem="NM5-OH-7mj" secondAttribute="trailing" constant="15" id="BdY-vX-NZZ"/>
+                            <constraint firstItem="qNJ-an-CgO" firstAttribute="top" secondItem="39o-4Z-8UK" secondAttribute="bottom" constant="50" id="Ndq-CY-uFF"/>
+                            <constraint firstItem="r22-50-epc" firstAttribute="trailing" secondItem="iy6-4x-Gz3" secondAttribute="trailing" constant="15" id="QLQ-eZ-jIP"/>
+                            <constraint firstItem="o69-5x-ZoJ" firstAttribute="top" secondItem="r22-50-epc" secondAttribute="top" constant="50" id="RjG-Hj-eXk"/>
+                            <constraint firstItem="cVN-v9-sSc" firstAttribute="top" secondItem="NM5-OH-7mj" secondAttribute="bottom" constant="20" id="SPT-lc-v7l"/>
+                            <constraint firstItem="iy6-4x-Gz3" firstAttribute="top" secondItem="o69-5x-ZoJ" secondAttribute="bottom" constant="20" id="Yn2-TZ-sIt"/>
+                            <constraint firstItem="iy6-4x-Gz3" firstAttribute="leading" secondItem="r22-50-epc" secondAttribute="leading" constant="15" id="aoq-w6-a76"/>
+                            <constraint firstItem="r22-50-epc" firstAttribute="trailing" secondItem="o69-5x-ZoJ" secondAttribute="trailing" constant="15" id="dpC-ao-sgC"/>
+                            <constraint firstItem="cVN-v9-sSc" firstAttribute="leading" secondItem="r22-50-epc" secondAttribute="leading" constant="15" id="hKM-uI-ysy"/>
+                            <constraint firstItem="r22-50-epc" firstAttribute="trailing" secondItem="cVN-v9-sSc" secondAttribute="trailing" constant="15" id="hgc-zK-S4W"/>
+                            <constraint firstItem="NM5-OH-7mj" firstAttribute="leading" secondItem="r22-50-epc" secondAttribute="leading" constant="15" id="kGx-dU-Sh2"/>
+                            <constraint firstItem="qNJ-an-CgO" firstAttribute="centerX" secondItem="nZE-sq-H8J" secondAttribute="centerX" id="rVz-b0-SBC"/>
+                            <constraint firstItem="39o-4Z-8UK" firstAttribute="leading" secondItem="r22-50-epc" secondAttribute="leading" constant="15" id="zTd-3l-MUI"/>
+                            <constraint firstItem="r22-50-epc" firstAttribute="trailing" secondItem="39o-4Z-8UK" secondAttribute="trailing" constant="15" id="zZb-vW-b5Q"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="giS-hj-bbs"/>
+                    <connections>
+                        <outlet property="candleVolumeTextField" destination="cVN-v9-sSc" id="xoo-gP-iqk"/>
+                        <outlet property="fragrancePercentTextField" destination="NM5-OH-7mj" id="HP0-fD-0dO"/>
+                        <outlet property="fragranceTextField" destination="iy6-4x-Gz3" id="bzq-9j-a9Y"/>
+                        <outlet property="resultLabel" destination="39o-4Z-8UK" id="V5d-Fs-byP"/>
+                        <outlet property="waxTextField" destination="o69-5x-ZoJ" id="lLo-RZ-kcs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hde-tH-q5P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3781" y="860"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="BlV-fQ-xiE"/>
-        <segue reference="Kjt-Zw-6WU"/>
+        <segue reference="uPk-0j-JQI"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGroupedBackgroundColor">
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.18823529410000001" green="0.69019607839999997" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="tableBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiarySystemGroupedBackgroundColor">
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
