@@ -5,10 +5,10 @@ import UIKit
 //Рассчитаь количество свечей
 
 class CandlesCalculatorViewController: UIViewController {
-    @IBOutlet weak var waxTextField: UITextField!
-    @IBOutlet weak var fragranceTextField: UITextField!
-    @IBOutlet weak var fragrancePercentTextField: UITextField!
-    @IBOutlet weak var candleVolumeTextField: UITextField!
+    @IBOutlet weak var waxTextField: UITextField! //воск в граммах
+    @IBOutlet weak var fragranceTextField: UITextField! // ароматизатор
+    @IBOutlet weak var fragrancePercentTextField: UITextField! //%
+    @IBOutlet weak var candleVolumeTextField: UITextField! //свеча объем
     @IBOutlet weak var resultLabel: UITextView!
     
     override func viewDidLoad() {
@@ -31,32 +31,33 @@ class CandlesCalculatorViewController: UIViewController {
             showError("Введите корректные числа")
             return
         }
+         
         
-        let requiredFragrance = calculateRequiredFragrance(wax: wax, percent: percent)
-        
-        if fragrance < requiredFragrance {
-            showError("Недостаточно ароматизатора! Требуется: \(requiredFragrance) грамм")
-            return
-        }
-        
-        if volume > (wax + fragrance) {
-            showError("Материала не хватает для свечи")
-            return
-        }
-        
-        let result = calculateCandlesCount(wax: wax, fragrance: fragrance, volume: volume)
+        let result = calculateCandlesCount(wax: wax, fragrance: fragrance,percent: percent, volume: volume)
         resultLabel.text = "Количество свечей: \(result) шт"
     }
     
-    private func calculateRequiredFragrance(wax: Double, percent: Double) -> Double {
-        return wax * (percent / 100)
-    }
     
-    private func calculateCandlesCount(wax: Double, fragrance: Double, volume: Double) -> Int {
-        let totalMaterial = wax + fragrance
-        return Int(totalMaterial / volume)
+    private func calculateCandlesCount(wax: Double, fragrance: Double, percent: Double, volume: Double) -> Int {
+        
+        let candleFragranceVolume = volume * (percent / 100)
+        
+        guard fragrance >= candleFragranceVolume else {
+            showError("Недостаточно ароматизатора!Нужно \(candleFragranceVolume) грамм")
+            return 0
+        }
+        let candleWaxVolume = volume * (1 - percent/100)
+        
+        guard wax >= candleWaxVolume else {
+            showError("Недостаточно воска! Нужно \(candleWaxVolume) грамм")
+            return 0
+        }
+        
+        let maxWaxCandles = wax / candleWaxVolume
+        let maxFragranceCandles = fragrance / candleFragranceVolume
+        
+        return min(Int(maxWaxCandles), Int(maxFragranceCandles))
     }
-    
     private func showError(_ message: String) {
         let alert = UIAlertController(title: "Ошибка", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "ОК", style: .default))
